@@ -952,7 +952,7 @@ public partial class BotServer(Main mainForm, int port = 8080, int tcpPort = 808
         var controllers = GetBotControllers();
 
         var mode = config?.Mode.ToString() ?? "Unknown";
-        var name = config?.Hub?.BotName ?? "ZE_FusionBot";
+        var name = config?.Hub?.BotName ?? "FusionBot";
 
         var version = SysBot.Pokemon.Helpers.TradeBot.Version;
 
@@ -1028,13 +1028,13 @@ public partial class BotServer(Main mainForm, int port = 8080, int tcpPort = 808
 
                     if (!string.IsNullOrEmpty(response) && response.StartsWith('{'))
                     {
-                        // This is a ZE_FusionBot instance - find the process ID
+                        // This is a FusionBot instance - find the process ID
                         int processId = FindProcessIdForPort(capturedPort);
 
                         var instance = new BotInstance
                         {
                             ProcessId = processId,
-                            Name = "ZE_FusionBot",
+                            Name = "FusionBot",
                             Port = capturedPort,
                             WebPort = 8080,
                             Version = "Unknown",
@@ -1055,7 +1055,7 @@ public partial class BotServer(Main mainForm, int port = 8080, int tcpPort = 808
                         discoveredPorts.Add(capturedPort);
                     }
                 }
-                catch { /* Port not open or not a ZE_FusionBot instance */ }
+                catch { /* Port not open or not a FusionBot instance */ }
                 finally
                 {
                     semaphore.Release();
@@ -1066,10 +1066,10 @@ public partial class BotServer(Main mainForm, int port = 8080, int tcpPort = 808
         // Wait for all port scans to complete with overall timeout
         await Task.WhenAll(tasks).ConfigureAwait(false);
 
-        // Method 2: Check local ZE_FusionBot processes (fallback for instances not in standard port range)
+        // Method 2: Check local FusionBot processes (fallback for instances not in standard port range)
         try
         {
-            var processes = Process.GetProcessesByName("ZE_FusionBot")
+            var processes = Process.GetProcessesByName("FusionBot")
                 .Where(p => p.Id != currentPid);
 
             foreach (var process in processes)
@@ -1080,13 +1080,13 @@ public partial class BotServer(Main mainForm, int port = 8080, int tcpPort = 808
                     if (string.IsNullOrEmpty(exePath))
                         continue;
 
-                    var botName = "ZE_FusionBot"; // default
+                    var botName = "FusionBot"; // default
                     if (!string.IsNullOrEmpty(exePath))
                     {
                         botName = Path.GetFileNameWithoutExtension(exePath);
                     }
 
-                    var portFile = Path.Combine(Path.GetDirectoryName(exePath)!, $"ZE_FusionBot_{process.Id}.port");
+                    var portFile = Path.Combine(Path.GetDirectoryName(exePath)!, $"FusionBot_{process.Id}.port");
                     if (!File.Exists(portFile))
                         continue;
 
@@ -1143,7 +1143,7 @@ public partial class BotServer(Main mainForm, int port = 8080, int tcpPort = 808
     {
         try
         {
-            var processes = Process.GetProcessesByName("ZE_FusionBot");
+            var processes = Process.GetProcessesByName("FusionBot");
             foreach (var proc in processes)
             {
                 try
@@ -1152,7 +1152,7 @@ public partial class BotServer(Main mainForm, int port = 8080, int tcpPort = 808
                     if (string.IsNullOrEmpty(exePath))
                         continue;
 
-                    var portFile = Path.Combine(Path.GetDirectoryName(exePath)!, $"ZE_FusionBot_{proc.Id}.port");
+                    var portFile = Path.Combine(Path.GetDirectoryName(exePath)!, $"FusionBot_{proc.Id}.port");
                     if (File.Exists(portFile))
                     {
                         var portText = File.ReadAllText(portFile).Trim();
@@ -1206,7 +1206,7 @@ public partial class BotServer(Main mainForm, int port = 8080, int tcpPort = 808
                     instance.Mode = mode.GetString() ?? "Unknown";
 
                 if (root.TryGetProperty("Name", out var name))
-                    instance.Name = name.GetString() ?? "ZE_FusionBot";
+                    instance.Name = name.GetString() ?? "FusionBot";
 
                 if (root.TryGetProperty("ProcessPath", out var processPath))
                     instance.ProcessPath = processPath.GetString();
