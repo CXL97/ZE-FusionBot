@@ -294,6 +294,9 @@ An independently evolved fork that shares ideas, structure, and inspiration with
 | `batchTradeZip` | btz | Trade multiple Pokémon from a ZIP file. | `btz <file.zip>` | Everyone |
 | `batchInfo` | bei | Get info about a batch property. | `batchInfo <prop>` | Everyone |
 | `batchValidate` | bev | Validate a batch property. | `batchValidate <prop>` | Everyone |
+| `batchTradeMysteryMon` | btmm | Trade multiple Mystery Pokémon. | `btmm <number>` | Everyone |
+| `batchTradeMysteryEgg` | btme | Trade multiple Mystery eggs. | `btme <number>` | Everyone |
+| `itemBatchTrade` | ibt | Trade a specific item multiple times. | `ibt <item name> <number>` | Everyone |
 
 ## 📊 Queue Management
 
@@ -434,6 +437,7 @@ An independently evolved fork that shares ideas, structure, and inspiration with
 | `.Marking[type]=` | `Markings:` | Diamond, Heart, Square, Star, Triangle, Circle in Red or Blue `Markings: Diamond=Red / Circle=Blue` etc. |
 | `.Characteristic=` | `Characteristic:` | Type out a [characteristic](https://github.com/Secludedly/FusionBot?tab=readme-ov-file#-characteristic-reference). |
 | `.Nickname=` | `Nickname:` | Write "Suggest" for a random nickname pulled from code dictionary. |
+| `.MoveX_PP=` & `MoveX_PPUps=` | `PPUps:` | True / False, or a number from 0-3. Applied to all moves. |
 
 ---
 
