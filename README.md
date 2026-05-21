@@ -175,7 +175,7 @@ An independently evolved fork that shares ideas, structure, and inspiration with
 
 | Command | Aliases | Summary | Example | Permission |
 |---------|---------|---------|---------|------------|
-| `textTrade` | tt, text | Upload a .txt/.csv of Showdown sets for batch trading. | `tt <upload .txt/.csv file>` | Everyone |
+| `textTrade` | tt, text | Upload a .txt/.csv/.rtf/.pdf of Showdown sets for batch trading. | `tt <upload .txt/.csv file>` | Everyone |
 | `textView` | tv | View a specific Pokémon from your pending TextTrade file. | `tv 2` | Everyone |
 | `listEvents` | le | Lists available event files via DM. | `le <species> <page2>` | Everyone |
 | `eventRequest` | er | Downloads event attachments and adds to trade queue. | `eventRequest <file>` | Everyone |
@@ -197,7 +197,7 @@ An independently evolved fork that shares ideas, structure, and inspiration with
 | Command | Aliases | Summary | Example | Permission |
 |---------|---------|---------|---------|------------|
 | `batchTrade` | bt | Trade multiple Pokémon (max 6) from a list. | `bt <Set1> --- <Set2>` | Everyone |
-| `batchTradeZip` | btz | Trade multiple Pokémon from a ZIP file. | `btz <file.zip>` | Everyone |
+| `batchTradeZip` | btz | Trade multiple Pokémon from a ZIP/RAR/7z file. | `btz <file.7z>` | Everyone |
 | `batchInfo` | bei | Get info about a batch property. | `batchInfo <prop>` | Everyone |
 | `batchValidate` | bev | Validate a batch property. | `batchValidate <prop>` | Everyone |
 | `batchTradeMysteryMon` | btmm | Trade multiple Mystery Pokémon. | `btmm <number>` | Everyone |
