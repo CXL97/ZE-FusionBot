@@ -42,15 +42,12 @@ namespace SysBot.Pokemon.WinForms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             panelLeftSide = new Panel();
             btnLogs = new IconButton();
             btnHub = new IconButton();
             CB_Themes = new ComboBox();
             btnBots = new IconButton();
             panelImageLogo = new Panel();
-            panel6 = new Panel();
-            panel5 = new Panel();
             panel3 = new Panel();
             pictureLogo = new PictureBox();
             lblTitle = new Label();
@@ -111,7 +108,7 @@ namespace SysBot.Pokemon.WinForms
             btnLogs.Padding = new Padding(10, 0, 20, 0);
             btnLogs.Size = new Size(220, 60);
             btnLogs.TabIndex = 3;
-            btnLogs.Text = " " + Strings.Get("Main_BtnLogs", "Logs");
+            btnLogs.Text = " Logs";
             btnLogs.TextAlign = ContentAlignment.MiddleLeft;
             btnLogs.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnLogs.UseVisualStyleBackColor = true;
@@ -134,7 +131,7 @@ namespace SysBot.Pokemon.WinForms
             btnHub.Padding = new Padding(10, 0, 20, 0);
             btnHub.Size = new Size(220, 60);
             btnHub.TabIndex = 2;
-            btnHub.Text = " " + Strings.Get("Main_BtnHub", "Hub");
+            btnHub.Text = " Hub";
             btnHub.TextAlign = ContentAlignment.MiddleLeft;
             btnHub.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnHub.UseVisualStyleBackColor = true;
@@ -167,7 +164,7 @@ namespace SysBot.Pokemon.WinForms
             btnBots.Padding = new Padding(10, 0, 20, 0);
             btnBots.Size = new Size(220, 60);
             btnBots.TabIndex = 1;
-            btnBots.Text = " " + Strings.Get("Main_BtnBots", "Bots");
+            btnBots.Text = " Bots";
             btnBots.TextAlign = ContentAlignment.MiddleLeft;
             btnBots.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnBots.UseVisualStyleBackColor = true;
@@ -176,8 +173,6 @@ namespace SysBot.Pokemon.WinForms
             // panelImageLogo
             // 
             panelImageLogo.BackColor = Color.Transparent;
-            panelImageLogo.Controls.Add(panel6);
-            panelImageLogo.Controls.Add(panel5);
             panelImageLogo.Controls.Add(panel3);
             panelImageLogo.Controls.Add(pictureLogo);
             panelImageLogo.Dock = DockStyle.Top;
@@ -185,25 +180,6 @@ namespace SysBot.Pokemon.WinForms
             panelImageLogo.Name = "panelImageLogo";
             panelImageLogo.Size = new Size(220, 125);
             panelImageLogo.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            panel6.BackColor = Color.FromArgb(20, 19, 57);
-            panel6.Dock = DockStyle.Left;
-            panel6.Location = new Point(0, 6);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(6, 113);
-            panel6.TabIndex = 5;
-            panel6.Paint += panel6_Paint;
-            // 
-            // panel5
-            // 
-            panel5.BackColor = Color.FromArgb(20, 19, 57);
-            panel5.Dock = DockStyle.Top;
-            panel5.Location = new Point(0, 0);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(220, 6);
-            panel5.TabIndex = 4;
             // 
             // panel3
             // 
@@ -213,12 +189,12 @@ namespace SysBot.Pokemon.WinForms
             panel3.Name = "panel3";
             panel3.Size = new Size(220, 6);
             panel3.TabIndex = 3;
+            panel3.Paint += panel3_Paint;
             // 
             // pictureLogo
             // 
             pictureLogo.BackColor = Color.Transparent;
             pictureLogo.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureLogo.Image = (Image)resources.GetObject("pictureLogo.Image");
             pictureLogo.Location = new Point(3, 12);
             pictureLogo.Name = "pictureLogo";
             pictureLogo.Size = new Size(217, 107);
@@ -236,7 +212,7 @@ namespace SysBot.Pokemon.WinForms
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(220, 32);
             lblTitle.TabIndex = 4;
-            lblTitle.Text = Strings.Get("Main_TitleDefault", "FusionBot | v0.0.0 | MODE: None");
+            lblTitle.Text = "FusionBot | v0.0.0 | MODE: None";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel4
@@ -329,7 +305,7 @@ namespace SysBot.Pokemon.WinForms
             lblTitleChildForm.Name = "lblTitleChildForm";
             lblTitleChildForm.Size = new Size(173, 53);
             lblTitleChildForm.TabIndex = 0;
-            lblTitleChildForm.Text = Strings.Get("Main_ChildLoading", "LOADING ...");
+            lblTitleChildForm.Text = "LOADING ...";
             // 
             // upperPanelImage
             // 
@@ -453,8 +429,6 @@ namespace SysBot.Pokemon.WinForms
         internal Panel panel1;
         internal Panel panel4;
         internal Panel panel3;
-        internal Panel panel6;
-        internal Panel panel5;
         private ComboBox CB_Themes;
     }
 }
