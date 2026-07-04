@@ -484,7 +484,12 @@ public partial class BotController : UserControl
         _status = status;
         UpdateStatusUI(status);
 
-        lblConnectionName.Text = bot.Connection?.Label ?? "Unknown Connection";
+        // Show the IP/USB id, plus the in-game trainer once the bot connects and identifies
+        // (e.g. "192.168.1.161 Online as Gogeta/112025"). Falls back to the connection label
+        // for non-Poke executors.
+        lblConnectionName.Text = bot is PokeRoutineExecutorBase pkBot
+            ? pkBot.ConnectionDisplay
+            : bot.Connection?.Label ?? "Unknown Connection";
         lblConnectionInfo.Text = $"↪ {bot.LastLogged}";
         SetBotMetaDisplay(State.InitialRoutine.ToString(), bot.LastTime);
     }
